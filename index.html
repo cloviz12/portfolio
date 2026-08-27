@@ -17,6 +17,7 @@
     <a class="wordmark" href="#top">Luis Bravo</a>
     <nav class="nav">
       <a href="#work">Work</a>
+      <a href="#craft">Craft</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -138,6 +139,38 @@
     </div>
   </section>
 
+  <section id="craft" class="section wrap">
+    <h2 class="section-title">Craft &amp; VFX</h2>
+
+    <div class="craft-block">
+      <div class="loop-frame">
+        <video class="loop-video" autoplay muted loop playsinline>
+          <source src="assets/video/route-vfx.mov" type="video/quicktime">
+          <source src="assets/video/route-vfx.mov" type="video/mp4">
+        </video>
+        <span class="vfx-tag">
+          <span class="vfx-dot"></span>
+          VFX — eye reflection is hand-animated, not real
+        </span>
+      </div>
+    </div>
+
+    <div class="craft-block">
+      <h3 class="craft-subtitle">Color Grading</h3>
+      <p class="craft-desc">Drag to compare — raw footage vs. my grade.</p>
+
+      <div class="compare" id="grade-compare">
+        <div class="compare-media">
+          <img class="compare-img compare-before" src="assets/grade-before.jpg" alt="Ungraded footage">
+          <img class="compare-img compare-after" src="assets/grade-after.jpg" alt="Graded footage">
+        </div>
+        <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Compare before and after color grade">
+        <span class="compare-label compare-label-left">Raw</span>
+        <span class="compare-label compare-label-right">Graded</span>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="section wrap">
     <h2 class="section-title">About</h2>
     <p class="about-text">I combine hands-on editing — Premiere Pro, After Effects, DaVinci Resolve — with production leadership: directing live shoots, running streaming broadcasts, and more recently, building generative-AI workflows into a studio's creative pipeline. I care about turnaround time as much as craft; the work has to look right and ship on schedule.</p>
@@ -222,6 +255,16 @@
 
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
+  var compareRange = document.querySelector('.compare-range');
+  if (compareRange) {
+    var compareAfter = document.querySelector('.compare-after');
+    var updateCompare = function(){
+      compareAfter.style.clipPath = 'inset(0 ' + (100 - compareRange.value) + '% 0 0)';
+    };
+    compareRange.addEventListener('input', updateCompare);
+    updateCompare();
+  }
+
   document.querySelectorAll('.filter-pill').forEach(function(pill){
     pill.addEventListener('click', function(){
       document.querySelectorAll('.filter-pill').forEach(function(p){ p.classList.remove('active'); });
