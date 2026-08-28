@@ -6,8 +6,10 @@
 <title>Luis Bravo — Video Editor &amp; Motion Designer</title>
 <meta name="description" content="Luis Bravo — Senior Video Editor, Motion Graphics &amp; AI-Driven Content Production. Remote, open to international roles.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+<link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -300,16 +302,19 @@
 
     <div class="craft-block" id="grade-block">
       <h3 class="craft-subtitle">Color Grading</h3>
-      <p class="craft-desc">Drag to compare — raw footage vs. my grade.</p>
+      <p class="craft-desc">Slide to blend my color grade over the raw footage.</p>
 
       <div class="compare" id="grade-compare">
         <div class="compare-media">
           <img class="compare-img compare-before" src="assets/grade-before.jpg" alt="Ungraded footage">
           <img class="compare-img compare-after" src="assets/grade-after.jpg" alt="Graded footage">
         </div>
-        <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Compare before and after color grade">
-        <span class="compare-label compare-label-left">Raw</span>
-        <span class="compare-label compare-label-right">Graded</span>
+        <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Blend between raw and graded footage">
+        <div class="compare-labels">
+          <span class="compare-label">Raw</span>
+          <span class="compare-readout" id="grade-readout">50% graded</span>
+          <span class="compare-label">Graded</span>
+        </div>
       </div>
     </div>
   </section>
@@ -326,8 +331,10 @@
   var compareRange = document.querySelector('.compare-range');
   if (compareRange) {
     var compareAfter = document.querySelector('.compare-after');
+    var gradeReadout = document.getElementById('grade-readout');
     var updateCompare = function(){
-      compareAfter.style.clipPath = 'inset(0 ' + (100 - compareRange.value) + '% 0 0)';
+      compareAfter.style.opacity = compareRange.value / 100;
+      if (gradeReadout) gradeReadout.textContent = compareRange.value + '% graded';
     };
     compareRange.addEventListener('input', updateCompare);
     updateCompare();
