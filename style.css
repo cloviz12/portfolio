@@ -22,7 +22,7 @@
   }
 }
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box; overflow-anchor:none;}
 html{scroll-behavior:smooth;}
 body{
   margin:0;
@@ -119,11 +119,6 @@ a{color:var(--teal);}
   transition:opacity 0.25s ease;
 }
 .plate.is-hidden{display:none;}
-
-.plate-number{
-  font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--sage);
-  letter-spacing:0.1em; margin-bottom:1.1rem;
-}
 
 .plate-stage{
   position:relative; width:100%;
