@@ -7,10 +7,11 @@
   --teal:#2B6E76;
   --teal-soft:#E4EEEC;
   --amber:#B9761F;
+  color-scheme:light;
 }
 
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not([data-theme="light"]){
     --paper:#14191A;
     --surface:#1B2121;
     --ink:#E9E7DE;
@@ -19,7 +20,20 @@
     --teal:#63B4B9;
     --teal-soft:#1E3336;
     --amber:#E3A85B;
+    color-scheme:dark;
   }
+}
+
+:root[data-theme="dark"]{
+  --paper:#14191A;
+  --surface:#1B2121;
+  --ink:#E9E7DE;
+  --ink-soft:#AEB8B0;
+  --line:#323A38;
+  --teal:#63B4B9;
+  --teal-soft:#1E3336;
+  --amber:#E3A85B;
+  color-scheme:dark;
 }
 
 *{box-sizing:border-box; overflow-anchor:none;}
