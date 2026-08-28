@@ -57,6 +57,17 @@ a{color:var(--teal);}
 }
 .nav a:hover{color:var(--teal);}
 
+.lang-toggle{
+  font-family:'IBM Plex Mono', monospace; font-size:0.78rem; font-weight:700;
+  background:transparent; border:1px solid var(--ink); border-radius:0;
+  padding:0.3rem 0.6rem; cursor:pointer; color:var(--ink-soft);
+  display:flex; align-items:center; gap:0.3rem;
+}
+.lang-toggle:hover{border-color:var(--teal);}
+.lang-opt{color:var(--ink-soft);}
+.lang-opt.active{color:var(--teal); font-weight:800;}
+.lang-sep{color:var(--line);}
+
 .hero{
   position:relative; min-height:min(88vh, 780px); display:flex; align-items:flex-end;
   overflow:hidden; background:#000;

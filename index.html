@@ -18,11 +18,14 @@
   <div class="wrap header-inner">
     <a class="wordmark" href="#top">Luis Bravo</a>
     <nav class="nav">
-      <a href="#work">Work</a>
-      <a href="#craft">Craft</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#craft" data-i18n="nav.craft">Craft</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+        <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -36,64 +39,64 @@
     </video>
     <div class="hero-scrim"></div>
     <div class="hero-content wrap">
-      <p class="eyebrow">Video Editor · Motion Graphics · AI-Driven Production</p>
-      <h1>I cut raw footage into content people actually watch.</h1>
-      <p class="hero-lede">Senior video editor and audiovisual producer based in Colombia, open to remote international work. I've led brand campaigns end-to-end — production, post, motion graphics — and built the AI-assisted workflows that let a small creative team ship faster.</p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Video Editor · Motion Graphics · AI-Driven Production</p>
+      <h1 data-i18n="hero.h1">I cut raw footage into content people actually watch.</h1>
+      <p class="hero-lede" data-i18n="hero.lede">Senior video editor and audiovisual producer based in Colombia, open to remote international work. I've led brand campaigns end-to-end — production, post, motion graphics — and built the AI-assisted workflows that let a small creative team ship faster.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:saintclovis101@gmail.com">Get in touch</a>
-        <a class="btn btn-ghost" href="assets/Luis_Bravo_CV_EN.docx" download>Download résumé</a>
+        <a class="btn btn-primary" href="mailto:saintclovis101@gmail.com" data-i18n="hero.contactBtn">Get in touch</a>
+        <a class="btn btn-ghost" href="assets/Luis_Bravo_CV_EN.docx" download data-i18n="hero.downloadBtn">Download résumé</a>
       </div>
     </div>
   </section>
 
   <section class="section wrap profile-section">
-    <span class="gallery-kicker">Profile</span>
+    <span class="gallery-kicker" data-i18n="profile.kicker">Profile</span>
     <div class="profile-grid">
 
       <div class="profile-main">
 
         <div class="panel" id="about">
-          <h2 class="panel-title">About</h2>
-          <p class="about-text">I combine hands-on editing — Premiere Pro, After Effects, DaVinci Resolve — with production leadership: directing live shoots, running streaming broadcasts, and more recently, building generative-AI workflows into a studio's creative pipeline. I care about turnaround time as much as craft; the work has to look right and ship on schedule.</p>
+          <h2 class="panel-title" data-i18n="about.title">About</h2>
+          <p class="about-text" data-i18n="about.text">I combine hands-on editing — Premiere Pro, After Effects, DaVinci Resolve — with production leadership: directing live shoots, running streaming broadcasts, and more recently, building generative-AI workflows into a studio's creative pipeline. I care about turnaround time as much as craft; the work has to look right and ship on schedule.</p>
         </div>
 
         <div class="panel" id="experience">
-          <h2 class="panel-title">Experience</h2>
+          <h2 class="panel-title" data-i18n="exp.title">Experience</h2>
 
           <article class="job">
             <div class="job-head">
-              <h3>AI Production &amp; Creative Development Lead</h3>
+              <h3 data-i18n="exp.job1.title">AI Production &amp; Creative Development Lead</h3>
               <span class="job-org">Metaskins Studios</span>
             </div>
             <ul class="job-bullets">
-              <li>Led the studio's transition to AI-integrated workflows for image and video production.</li>
-              <li>Directed advertising campaign production for brands including Agua Bendita and Stanley, plus tennis and commercial content.</li>
-              <li>Trained and directed the creative team on generative AI tools for content production.</li>
-              <li>Built and optimized live-streaming and audiovisual production pipelines end-to-end.</li>
+              <li data-i18n="exp.job1.b1">Led the studio's transition to AI-integrated workflows for image and video production.</li>
+              <li data-i18n="exp.job1.b2">Directed advertising campaign production for brands including Agua Bendita and Stanley, plus tennis and commercial content.</li>
+              <li data-i18n="exp.job1.b3">Trained and directed the creative team on generative AI tools for content production.</li>
+              <li data-i18n="exp.job1.b4">Built and optimized live-streaming and audiovisual production pipelines end-to-end.</li>
             </ul>
           </article>
 
           <article class="job">
             <div class="job-head">
-              <h3>Camera Operator / Director of Photography / Livestream / Lighting</h3>
-              <span class="job-org">Independent Audiovisual Productions</span>
+              <h3 data-i18n="exp.job2.title">Camera Operator / Director of Photography / Livestream / Lighting</h3>
+              <span class="job-org" data-i18n="exp.job2.org">Independent Audiovisual Productions</span>
             </div>
             <ul class="job-bullets">
-              <li>Operated camera and directed photography and lighting for large-scale audiovisual productions.</li>
-              <li>Produced and technically directed live-streaming broadcasts.</li>
-              <li>Led field production and technical-creative development for independent projects.</li>
+              <li data-i18n="exp.job2.b1">Operated camera and directed photography and lighting for large-scale audiovisual productions.</li>
+              <li data-i18n="exp.job2.b2">Produced and technically directed live-streaming broadcasts.</li>
+              <li data-i18n="exp.job2.b3">Led field production and technical-creative development for independent projects.</li>
             </ul>
           </article>
 
           <article class="job">
             <div class="job-head">
-              <h3>Video Editing &amp; Multimedia Production Lead</h3>
+              <h3 data-i18n="exp.job3.title">Video Editing &amp; Multimedia Production Lead</h3>
               <span class="job-org">Metaskins Studios</span>
             </div>
             <ul class="job-bullets">
-              <li>Led editing, post-production, and motion graphics for advertising campaigns for recognized brands.</li>
-              <li>Created graphic assets and illustrations for brand campaigns.</li>
-              <li>Produced and supervised multimedia content; organized production schedules and team workflows.</li>
+              <li data-i18n="exp.job3.b1">Led editing, post-production, and motion graphics for advertising campaigns for recognized brands.</li>
+              <li data-i18n="exp.job3.b2">Created graphic assets and illustrations for brand campaigns.</li>
+              <li data-i18n="exp.job3.b3">Produced and supervised multimedia content; organized production schedules and team workflows.</li>
             </ul>
           </article>
         </div>
@@ -103,28 +106,28 @@
       <aside class="profile-side">
 
         <div class="panel panel-tight">
-          <h2 class="panel-title">Education</h2>
-          <p class="edu-title">Visual Arts</p>
+          <h2 class="panel-title" data-i18n="edu.title">Education</h2>
+          <p class="edu-title" data-i18n="edu.program">Visual Arts</p>
           <p class="edu-place">Medellín, Colombia</p>
-          <p class="edu-desc">Coursework in fine arts and audiovisual development.</p>
+          <p class="edu-desc" data-i18n="edu.desc">Coursework in fine arts and audiovisual development.</p>
         </div>
 
         <div class="panel panel-tight">
-          <h2 class="panel-title">Skills</h2>
+          <h2 class="panel-title" data-i18n="skills.title">Skills</h2>
           <div class="skill-grid">
-            <span class="skill-box">Video Editing</span>
-            <span class="skill-box">Motion Graphics</span>
-            <span class="skill-box">Audiovisual Production</span>
-            <span class="skill-box">Livestreaming</span>
-            <span class="skill-box">Photography &amp; Lighting</span>
-            <span class="skill-box">AI Creative Workflows</span>
-            <span class="skill-box">Creative Direction</span>
-            <span class="skill-box">Team Leadership</span>
+            <span class="skill-box" data-i18n="skills.s1">Video Editing</span>
+            <span class="skill-box" data-i18n="skills.s2">Motion Graphics</span>
+            <span class="skill-box" data-i18n="skills.s3">Audiovisual Production</span>
+            <span class="skill-box" data-i18n="skills.s4">Livestreaming</span>
+            <span class="skill-box" data-i18n="skills.s5">Photography &amp; Lighting</span>
+            <span class="skill-box" data-i18n="skills.s6">AI Creative Workflows</span>
+            <span class="skill-box" data-i18n="skills.s7">Creative Direction</span>
+            <span class="skill-box" data-i18n="skills.s8">Team Leadership</span>
           </div>
         </div>
 
         <div class="panel panel-tight">
-          <h2 class="panel-title">Software</h2>
+          <h2 class="panel-title" data-i18n="software.title">Software</h2>
           <div class="software-grid">
             <div class="software-item">
               <span class="software-icon icon-ae"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.54 10.73c-.1-.31-.19-.61-.29-.92s-.19-.6-.27-.89c-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.13.51-.29.98-.44 1.4h2.54c-.06-.21-.14-.46-.23-.72-.09-.27-.18-.56-.27-.86zm8.58-.29c-.55-.03-1.07.26-1.33.76-.12.23-.19.47-.22.72h2.109c.26 0 .45 0 .57-.01.08-.01.16-.03.23-.08v-.1c0-.13-.021-.25-.061-.37-.178-.56-.708-.94-1.298-.92zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.04 16.511h-2.09c-.07.01-.14-.041-.16-.11l-.82-2.4H5.92l-.76 2.36c-.02.09-.1.15-.19.14H3.09c-.11 0-.14-.06-.11-.18L6.2 7.39c.03-.1.06-.19.1-.31.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.07 0 .12.03.13.08l3.65 10.25c.03.11.001.161-.1.161zm7.851-3.991c-.021.189-.031.33-.041.42-.01.07-.069.13-.14.13-.06 0-.17.01-.33.021-.159.02-.35.029-.579.029-.23 0-.471-.04-.73-.04h-3.17c.039.31.14.62.31.89.181.271.431.48.729.601.4.17.841.26 1.281.25.35-.011.699-.04 1.039-.11.311-.039.61-.119.891-.23.05-.039.08-.02.08.08v1.531c0 .039-.01.08-.021.119-.021.03-.04.051-.069.07-.32.14-.65.24-1 .3-.471.09-.94.13-1.42.12-.761 0-1.4-.12-1.92-.35-.49-.211-.921-.541-1.261-.95-.319-.39-.55-.83-.69-1.31-.14-.471-.209-.961-.209-1.461 0-.539.08-1.07.25-1.59.16-.5.41-.96.75-1.37.33-.4.739-.72 1.209-.95.471-.23 1.03-.31 1.67-.31.531-.01 1.06.09 1.55.31.41.18.77.45 1.05.8.26.34.47.72.601 1.14.129.4.189.81.189 1.22 0 .24-.01.45-.019.64z"/></svg></span>
@@ -148,28 +151,28 @@
             </div>
             <div class="software-item">
               <span class="software-icon icon-genai">AI</span>
-              <span>Generative AI</span>
+              <span data-i18n="software.genai">Generative AI</span>
             </div>
           </div>
         </div>
 
         <div class="panel panel-tight">
-          <h2 class="panel-title">Languages</h2>
+          <h2 class="panel-title" data-i18n="lang.title">Languages</h2>
           <div class="lang-row">
-            <div class="lang-head"><span>Spanish</span><span>Native</span></div>
+            <div class="lang-head"><span data-i18n="lang.es">Spanish</span><span data-i18n="lang.esLevel">Native</span></div>
             <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
           </div>
           <div class="lang-row">
-            <div class="lang-head"><span>English</span><span>Advanced</span></div>
+            <div class="lang-head"><span data-i18n="lang.en">English</span><span data-i18n="lang.enLevel">Advanced</span></div>
             <div class="lang-bar"><div class="lang-fill" style="width:82%"></div></div>
           </div>
         </div>
 
         <div class="panel panel-tight" id="contact">
-          <h2 class="panel-title">Contact</h2>
+          <h2 class="panel-title" data-i18n="contact.title">Contact</h2>
           <p class="contact-line"><a href="mailto:saintclovis101@gmail.com">saintclovis101@gmail.com</a></p>
           <p class="contact-line">+57 305 222 3353</p>
-          <p class="contact-line">Colombia — open to remote, international</p>
+          <p class="contact-line" data-i18n="contact.location">Colombia — open to remote, international</p>
         </div>
 
       </aside>
@@ -179,12 +182,12 @@
 
   <section id="work" class="section section-wide gallery-section">
     <div class="wrap-wide">
-      <span class="gallery-kicker">Exhibit 01</span>
-      <h2 class="section-title gallery-title">Selected Work</h2>
-      <p class="work-intro">Campaign work produced with Metaskins Studios — shown here as published by the brand. A personal reel is coming soon.</p>
+      <span class="gallery-kicker" data-i18n="work.kicker">Exhibit 01</span>
+      <h2 class="section-title gallery-title" data-i18n="work.title">Selected Work</h2>
+      <p class="work-intro" data-i18n="work.intro">Campaign work produced with Metaskins Studios — shown here as published by the brand. A personal reel is coming soon.</p>
 
       <div class="brand-filter" role="tablist" aria-label="Filter by brand">
-        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill active" data-filter="all" data-i18n="work.filterAll">All</button>
         <button class="filter-pill" data-filter="agua-bendita">Agua Bendita</button>
         <button class="filter-pill" data-filter="tennis">Tennis</button>
         <button class="filter-pill" data-filter="itana">ITANA</button>
@@ -200,8 +203,8 @@
         <div class="plate-caption">
           <span class="work-brand">Agua Bendita</span>
           <h3>Chapter VI — Azúcar</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Summer collection launch — a landscape shaped by sweetness.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d1">Summer collection launch — a landscape shaped by sweetness.</p>
         </div>
       </article>
 
@@ -212,8 +215,8 @@
         <div class="plate-caption">
           <span class="work-brand">Agua Bendita</span>
           <h3>Chapter 4 — Anhelo</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Seasonal campaign reel — swallows cutting through warm skies.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d2">Seasonal campaign reel — swallows cutting through warm skies.</p>
         </div>
       </article>
 
@@ -222,14 +225,14 @@
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLQ2EJ-RWWZ/" data-instgrm-version="14"></blockquote>
           <span class="vfx-tag plate-vfx-tag">
             <span class="vfx-dot"></span>
-            VFX — full environment replacement. Never shot on a beach.
+            <span data-i18n="work.itanaVfx">VFX — full environment replacement. Never shot on a beach.</span>
           </span>
         </div>
         <div class="plate-caption">
           <span class="work-brand">ITANA</span>
           <h3>Soul Flow — SS25 Collection</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Collection launch produced in collaboration with Metaskins Studio. The beach setting is a full digital environment replacement, not a location shoot.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d3">Collection launch produced in collaboration with Metaskins Studio. The beach setting is a full digital environment replacement, not a location shoot.</p>
         </div>
       </article>
 
@@ -240,8 +243,8 @@
         <div class="plate-caption">
           <span class="work-brand">Stanley × Agua Bendita</span>
           <h3>Launch Campaign</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Collaboration launch reel — maximalist prints.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d4">Collaboration launch reel — maximalist prints.</p>
         </div>
       </article>
 
@@ -252,8 +255,8 @@
         <div class="plate-caption">
           <span class="work-brand">Tennis</span>
           <h3>Tennis Friends — Bartolo</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Loyalty-program brand content, Close Friends segment.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d5">Loyalty-program brand content, Close Friends segment.</p>
         </div>
       </article>
 
@@ -264,8 +267,8 @@
         <div class="plate-caption">
           <span class="work-brand">Tennis</span>
           <h3>Tennis Friends — Argus</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Loyalty-program brand content, Friends segment.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d6">Loyalty-program brand content, Friends segment.</p>
         </div>
       </article>
 
@@ -276,8 +279,8 @@
         <div class="plate-caption">
           <span class="work-brand">Tennis</span>
           <h3>Tennis Friends — Mashmello</h3>
-          <p class="work-role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc">Loyalty-program brand content, New Friends segment.</p>
+          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+          <p class="work-desc" data-i18n="work.d7">Loyalty-program brand content, New Friends segment.</p>
         </div>
       </article>
 
@@ -285,7 +288,7 @@
   </section>
 
   <section id="craft" class="section wrap">
-    <h2 class="section-title">Craft &amp; VFX</h2>
+    <h2 class="section-title" data-i18n="craft.title">Craft &amp; VFX</h2>
 
     <div class="craft-block">
       <div class="loop-frame">
@@ -295,14 +298,14 @@
         </video>
         <span class="vfx-tag">
           <span class="vfx-dot"></span>
-          VFX — eye reflection is hand-animated, not real
+          <span data-i18n="craft.eyeVfx">VFX — eye reflection is hand-animated, not real</span>
         </span>
       </div>
     </div>
 
     <div class="craft-block" id="grade-block">
-      <h3 class="craft-subtitle">Color Grading</h3>
-      <p class="craft-desc">Slide to blend my color grade over the raw footage.</p>
+      <h3 class="craft-subtitle" data-i18n="craft.gradeTitle">Color Grading</h3>
+      <p class="craft-desc" data-i18n="craft.gradeDesc">Slide to blend my color grade over the raw footage.</p>
 
       <div class="compare" id="grade-compare">
         <div class="compare-media">
@@ -311,9 +314,9 @@
         </div>
         <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Blend between raw and graded footage">
         <div class="compare-labels">
-          <span class="compare-label">Raw</span>
+          <span class="compare-label" data-i18n="craft.raw">Raw</span>
           <span class="compare-readout" id="grade-readout">50% graded</span>
-          <span class="compare-label">Graded</span>
+          <span class="compare-label" data-i18n="craft.graded">Graded</span>
         </div>
       </div>
     </div>
@@ -323,18 +326,21 @@
 </main>
 
 <footer class="site-footer wrap">
-  <p>© 2026 Luis Bravo</p>
+  <p data-i18n="footer.copy">© 2026 Luis Bravo</p>
 </footer>
 
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
+  var GRADED_TEXT = { en: '% graded', es: '% gradeado' };
+  var currentLang = 'en';
+
   var compareRange = document.querySelector('.compare-range');
+  var gradeReadout = document.getElementById('grade-readout');
   if (compareRange) {
     var compareAfter = document.querySelector('.compare-after');
-    var gradeReadout = document.getElementById('grade-readout');
     var updateCompare = function(){
       compareAfter.style.opacity = compareRange.value / 100;
-      if (gradeReadout) gradeReadout.textContent = compareRange.value + '% graded';
+      if (gradeReadout) gradeReadout.textContent = compareRange.value + GRADED_TEXT[currentLang];
     };
     compareRange.addEventListener('input', updateCompare);
     updateCompare();
@@ -345,12 +351,93 @@
       document.querySelectorAll('.filter-pill').forEach(function(p){ p.classList.remove('active'); });
       pill.classList.add('active');
       var filter = pill.dataset.filter;
-      document.querySelectorAll('.work-item').forEach(function(item){
+      document.querySelectorAll('.plate').forEach(function(item){
         var show = filter === 'all' || item.dataset.brand === filter;
         item.classList.toggle('is-hidden', !show);
       });
     });
   });
+
+  // --- i18n ---
+  var ES = {
+    'nav.work': 'Trabajo', 'nav.craft': 'Oficio', 'nav.about': 'Sobre mí', 'nav.experience': 'Experiencia', 'nav.contact': 'Contacto',
+    'hero.eyebrow': 'Editor de Video · Motion Graphics · Producción con IA',
+    'hero.h1': 'Convierto material crudo en contenido que la gente sí ve.',
+    'hero.lede': 'Editor de video y productor audiovisual senior, con base en Colombia y disponible para trabajo remoto internacional. He liderado campañas de marca de principio a fin — producción, edición, motion graphics — y construí los flujos de trabajo con IA que le permitieron a un equipo creativo pequeño entregar más rápido.',
+    'hero.contactBtn': 'Escríbeme', 'hero.downloadBtn': 'Descargar CV',
+    'profile.kicker': 'Perfil',
+    'about.title': 'Sobre mí',
+    'about.text': 'Combino edición práctica — Premiere Pro, After Effects, DaVinci Resolve — con liderazgo de producción: dirección de rodajes en vivo, transmisiones en streaming y, más recientemente, la construcción de flujos de trabajo con IA generativa dentro de un estudio creativo. Me importa el tiempo de entrega tanto como el resultado; el trabajo tiene que verse bien y salir a tiempo.',
+    'exp.title': 'Experiencia',
+    'exp.job1.title': 'Líder de Producción con IA y Desarrollo Creativo',
+    'exp.job1.b1': 'Lideré la transición del estudio hacia flujos de trabajo integrados con IA para producción de imagen y video.',
+    'exp.job1.b2': 'Dirigí la producción de campañas publicitarias para marcas como Agua Bendita y Stanley, además de contenido de tenis y comercial.',
+    'exp.job1.b3': 'Capacité y dirigí al equipo creativo en herramientas de IA generativa para producción de contenido.',
+    'exp.job1.b4': 'Construí y optimicé los flujos de producción de streaming y audiovisual de principio a fin.',
+    'exp.job2.title': 'Operador de Cámara / Dirección de Fotografía / Streaming / Iluminación',
+    'exp.job2.org': 'Producciones Audiovisuales Independientes',
+    'exp.job2.b1': 'Operé cámara y dirigí fotografía e iluminación para producciones audiovisuales de gran escala.',
+    'exp.job2.b2': 'Produje y dirigí técnicamente transmisiones en vivo.',
+    'exp.job2.b3': 'Lideré producción de campo y desarrollo técnico-creativo para proyectos independientes.',
+    'exp.job3.title': 'Líder de Edición y Producción Multimedia',
+    'exp.job3.b1': 'Lideré edición, postproducción y motion graphics para campañas publicitarias de marcas reconocidas.',
+    'exp.job3.b2': 'Creé assets gráficos e ilustraciones para campañas de marca.',
+    'exp.job3.b3': 'Produje y supervisé contenido multimedia; organicé cronogramas de producción y flujos de equipo.',
+    'edu.title': 'Formación', 'edu.program': 'Artes Visuales', 'edu.desc': 'Formación en artes plásticas y desarrollo audiovisual.',
+    'skills.title': 'Habilidades',
+    'skills.s1': 'Edición de Video', 'skills.s2': 'Motion Graphics', 'skills.s3': 'Producción Audiovisual',
+    'skills.s4': 'Streaming en Vivo', 'skills.s5': 'Fotografía e Iluminación', 'skills.s6': 'Flujos Creativos con IA',
+    'skills.s7': 'Dirección Creativa', 'skills.s8': 'Liderazgo de Equipos',
+    'software.title': 'Software', 'software.genai': 'IA Generativa',
+    'lang.title': 'Idiomas', 'lang.es': 'Español', 'lang.esLevel': 'Nativo', 'lang.en': 'Inglés', 'lang.enLevel': 'Avanzado',
+    'contact.title': 'Contacto', 'contact.location': 'Colombia — disponible para remoto, internacional',
+    'work.kicker': 'Exhibición 01', 'work.title': 'Trabajo Seleccionado',
+    'work.intro': 'Campañas producidas con Metaskins Studios — mostradas tal como las publicó la marca. Un reel personal está en camino.',
+    'work.filterAll': 'Todas',
+    'work.role': 'Editor y Motion Graphics · vía Metaskins Studios',
+    'work.d1': 'Lanzamiento de colección de verano — un paisaje moldeado por la dulzura.',
+    'work.d2': 'Reel de campaña de temporada — golondrinas cruzando cielos cálidos.',
+    'work.itanaVfx': 'VFX — reemplazo total de entorno. Nunca se grabó en una playa.',
+    'work.d3': 'Lanzamiento de colección producido en colaboración con Metaskins Studio. El escenario de playa es un reemplazo digital total del entorno, no una locación real.',
+    'work.d4': 'Reel de lanzamiento de colaboración — estampados maximalistas.',
+    'work.d5': 'Contenido de marca para programa de lealtad, segmento Close Friends.',
+    'work.d6': 'Contenido de marca para programa de lealtad, segmento Friends.',
+    'work.d7': 'Contenido de marca para programa de lealtad, segmento New Friends.',
+    'craft.title': 'Oficio y VFX',
+    'craft.eyeVfx': 'VFX — el reflejo del ojo está animado a mano, no es real',
+    'craft.gradeTitle': 'Color Grading',
+    'craft.gradeDesc': 'Desliza para mezclar mi color grade sobre el material crudo.',
+    'craft.raw': 'Crudo', 'craft.graded': 'Gradeado',
+    'footer.copy': '© 2026 Luis Bravo',
+  };
+
+  var originals = {};
+  var langToggle = document.getElementById('lang-toggle');
+
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.dataset.i18n;
+      if (!(key in originals)) originals[key] = el.textContent;
+      el.textContent = lang === 'es' && ES[key] ? ES[key] : originals[key];
+    });
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    if (langToggle) langToggle.querySelectorAll('.lang-opt').forEach(function(el){
+      el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    if (compareRange && gradeReadout) updateCompare();
+    try { localStorage.setItem('lb-lang', lang); } catch(e){}
+  }
+
+  if (langToggle) {
+    langToggle.addEventListener('click', function(){
+      setLang(currentLang === 'en' ? 'es' : 'en');
+    });
+  }
+
+  var savedLang = 'en';
+  try { savedLang = localStorage.getItem('lb-lang') || 'en'; } catch(e){}
+  setLang(savedLang);
 </script>
 </body>
 </html>
