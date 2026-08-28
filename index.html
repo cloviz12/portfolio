@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luis Bravo — Video Editor &amp; Motion Designer</title>
 <meta name="description" content="Luis Bravo — Senior Video Editor, Motion Graphics &amp; AI-Driven Content Production. Remote, open to international roles.">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('lb-theme');
+    if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch(e){}
+})();
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +26,12 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="#top">Luis Bravo</a>
-    <nav class="nav">
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav" id="site-nav">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#craft" data-i18n="nav.craft">Craft</a>
       <a href="#about" data-i18n="nav.about">About</a>
@@ -26,7 +40,11 @@
       <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
         <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="es">ES</span>
       </button>
+      <button class="lang-toggle theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+        <span class="lang-opt" data-theme-opt="light">☀</span><span class="lang-sep">/</span><span class="lang-opt" data-theme-opt="dark">☾</span>
+      </button>
     </nav>
+    <div class="nav-backdrop" id="nav-backdrop"></div>
   </div>
 </header>
 
@@ -51,6 +69,7 @@
 
   <section class="section wrap profile-section">
     <span class="gallery-kicker" data-i18n="profile.kicker">Profile</span>
+
     <div class="profile-grid">
 
       <div class="profile-main">
@@ -105,11 +124,23 @@
 
       <aside class="profile-side">
 
+        <div class="profile-cover">
+          <picture>
+            <source srcset="assets/portrait-cover.webp" type="image/webp">
+            <img src="assets/portrait-cover.jpg" alt="Luis Bravo" loading="lazy" width="840" height="1050">
+          </picture>
+          <div class="profile-cover-scrim"></div>
+          <div class="profile-cover-content">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Video Editor · Motion Graphics · AI-Driven Production</p>
+            <h2 class="profile-cover-name">Luis Bravo</h2>
+          </div>
+        </div>
+
         <div class="panel panel-tight">
           <h2 class="panel-title" data-i18n="edu.title">Education</h2>
-          <p class="edu-title" data-i18n="edu.program">Visual Arts</p>
+          <p class="edu-title" data-i18n="edu.program">Interactive Design</p>
           <p class="edu-place">Medellín, Colombia</p>
-          <p class="edu-desc" data-i18n="edu.desc">Coursework in fine arts and audiovisual development.</p>
+          <p class="edu-desc" data-i18n="edu.desc">Coursework in interactive design and digital media.</p>
         </div>
 
         <div class="panel panel-tight">
@@ -184,13 +215,14 @@
     <div class="wrap-wide">
       <span class="gallery-kicker" data-i18n="work.kicker">Exhibit 01</span>
       <h2 class="section-title gallery-title" data-i18n="work.title">Selected Work</h2>
-      <p class="work-intro" data-i18n="work.intro">Campaign work produced with Metaskins Studios — shown here as published by the brand. A personal reel is coming soon.</p>
+      <p class="work-intro" data-i18n="work.intro">Campaign work produced with Metaskins Studios — shown here as published by the brand — plus a set of personal reel clips below.</p>
 
       <div class="brand-filter" role="tablist" aria-label="Filter by brand">
         <button class="filter-pill active" data-filter="all" data-i18n="work.filterAll">All</button>
         <button class="filter-pill" data-filter="agua-bendita">Agua Bendita</button>
         <button class="filter-pill" data-filter="tennis">Tennis</button>
         <button class="filter-pill" data-filter="itana">ITANA</button>
+        <button class="filter-pill" data-filter="reel" data-i18n="work.filterReel">Reel</button>
       </div>
     </div>
 
@@ -248,41 +280,69 @@
         </div>
       </article>
 
-      <article class="plate" data-brand="tennis">
-        <div class="plate-stage">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUgWAkLjYFi/" data-instgrm-version="14"></blockquote>
-        </div>
-        <div class="plate-caption">
-          <span class="work-brand">Tennis</span>
-          <h3>Tennis Friends — Bartolo</h3>
-          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc" data-i18n="work.d5">Loyalty-program brand content, Close Friends segment.</p>
-        </div>
-      </article>
+      <div class="plate-row" data-brand="tennis">
+        <article class="plate" data-brand="tennis">
+          <div class="plate-stage">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUgWAkLjYFi/" data-instgrm-version="14"></blockquote>
+          </div>
+          <div class="plate-caption">
+            <span class="work-brand">Tennis</span>
+            <h3>Tennis Friends — Bartolo</h3>
+            <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+            <p class="work-desc" data-i18n="work.d5">Loyalty-program brand content, Close Friends segment.</p>
+          </div>
+        </article>
 
-      <article class="plate" data-brand="tennis">
-        <div class="plate-stage">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUbMb9qiFaD/" data-instgrm-version="14"></blockquote>
-        </div>
-        <div class="plate-caption">
-          <span class="work-brand">Tennis</span>
-          <h3>Tennis Friends — Argus</h3>
-          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc" data-i18n="work.d6">Loyalty-program brand content, Friends segment.</p>
-        </div>
-      </article>
+        <article class="plate" data-brand="tennis">
+          <div class="plate-stage">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUbMb9qiFaD/" data-instgrm-version="14"></blockquote>
+          </div>
+          <div class="plate-caption">
+            <span class="work-brand">Tennis</span>
+            <h3>Tennis Friends — Argus</h3>
+            <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+            <p class="work-desc" data-i18n="work.d6">Loyalty-program brand content, Friends segment.</p>
+          </div>
+        </article>
 
-      <article class="plate" data-brand="tennis">
-        <div class="plate-stage">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUWoyG6leVV/" data-instgrm-version="14"></blockquote>
+        <article class="plate" data-brand="tennis">
+          <div class="plate-stage">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DUWoyG6leVV/" data-instgrm-version="14"></blockquote>
+          </div>
+          <div class="plate-caption">
+            <span class="work-brand">Tennis</span>
+            <h3>Tennis Friends — Mashmello</h3>
+            <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
+            <p class="work-desc" data-i18n="work.d7">Loyalty-program brand content, New Friends segment.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="plate-row reel-group" data-brand="reel">
+        <div class="reel-row">
+          <div class="reel-embed">
+            <div class="reel-embed-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/7S4XPqBh8yI" title="Reel style 01" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="reel-embed">
+            <div class="reel-embed-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/mEmSc156-6Y" title="Reel style 02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="reel-embed">
+            <div class="reel-embed-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/NsSLUM90BLE" title="Reel style 03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="reel-embed">
+            <div class="reel-embed-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/_d24bCNr2cg" title="Reel style 04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
-        <div class="plate-caption">
-          <span class="work-brand">Tennis</span>
-          <h3>Tennis Friends — Mashmello</h3>
-          <p class="work-role" data-i18n="work.role">Editor &amp; Motion Graphics · via Metaskins Studios</p>
-          <p class="work-desc" data-i18n="work.d7">Loyalty-program brand content, New Friends segment.</p>
-        </div>
-      </article>
+        <p class="reel-caption" data-i18n="work.reelCaption">Personal Reel — a few clips showing different edit and motion styles.</p>
+      </div>
 
     </div>
   </section>
@@ -351,7 +411,7 @@
       document.querySelectorAll('.filter-pill').forEach(function(p){ p.classList.remove('active'); });
       pill.classList.add('active');
       var filter = pill.dataset.filter;
-      document.querySelectorAll('.plate').forEach(function(item){
+      document.querySelectorAll('.plate, .plate-row').forEach(function(item){
         var show = filter === 'all' || item.dataset.brand === filter;
         item.classList.toggle('is-hidden', !show);
       });
@@ -383,7 +443,7 @@
     'exp.job3.b1': 'Lideré edición, postproducción y motion graphics para campañas publicitarias de marcas reconocidas.',
     'exp.job3.b2': 'Creé assets gráficos e ilustraciones para campañas de marca.',
     'exp.job3.b3': 'Produje y supervisé contenido multimedia; organicé cronogramas de producción y flujos de equipo.',
-    'edu.title': 'Formación', 'edu.program': 'Artes Visuales', 'edu.desc': 'Formación en artes plásticas y desarrollo audiovisual.',
+    'edu.title': 'Formación', 'edu.program': 'Diseño Interactivo', 'edu.desc': 'Formación en diseño interactivo y medios digitales.',
     'skills.title': 'Habilidades',
     'skills.s1': 'Edición de Video', 'skills.s2': 'Motion Graphics', 'skills.s3': 'Producción Audiovisual',
     'skills.s4': 'Streaming en Vivo', 'skills.s5': 'Fotografía e Iluminación', 'skills.s6': 'Flujos Creativos con IA',
@@ -392,8 +452,10 @@
     'lang.title': 'Idiomas', 'lang.es': 'Español', 'lang.esLevel': 'Nativo', 'lang.en': 'Inglés', 'lang.enLevel': 'Avanzado',
     'contact.title': 'Contacto', 'contact.location': 'Colombia — disponible para remoto, internacional',
     'work.kicker': 'Exhibición 01', 'work.title': 'Trabajo Seleccionado',
-    'work.intro': 'Campañas producidas con Metaskins Studios — mostradas tal como las publicó la marca. Un reel personal está en camino.',
+    'work.intro': 'Campañas producidas con Metaskins Studios — mostradas tal como las publicó la marca — más una selección de clips de mi reel personal abajo.',
     'work.filterAll': 'Todas',
+    'work.filterReel': 'Reel',
+    'work.reelCaption': 'Reel Personal — algunos clips con distintos estilos de edición y motion.',
     'work.role': 'Editor y Motion Graphics · vía Metaskins Studios',
     'work.d1': 'Lanzamiento de colección de verano — un paisaje moldeado por la dulzura.',
     'work.d2': 'Reel de campaña de temporada — golondrinas cruzando cielos cálidos.',
@@ -438,6 +500,52 @@
   var savedLang = 'en';
   try { savedLang = localStorage.getItem('lb-lang') || 'en'; } catch(e){}
   setLang(savedLang);
+
+  // --- theme ---
+  var themeToggle = document.getElementById('theme-toggle');
+
+  function setTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggle) themeToggle.querySelectorAll('.lang-opt').forEach(function(el){
+      el.classList.toggle('active', el.dataset.themeOpt === theme);
+    });
+    try { localStorage.setItem('lb-theme', theme); } catch(e){}
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(){
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+  // --- mobile nav ---
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+  var navBackdrop = document.getElementById('nav-backdrop');
+
+  function closeNav(){
+    if (siteNav) siteNav.classList.remove('is-open');
+    if (navToggle) { navToggle.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', 'false'); }
+    if (navBackdrop) navBackdrop.classList.remove('is-open');
+    document.body.classList.remove('nav-lock');
+  }
+  function openNav(){
+    if (siteNav) siteNav.classList.add('is-open');
+    if (navToggle) { navToggle.classList.add('is-open'); navToggle.setAttribute('aria-expanded', 'true'); }
+    if (navBackdrop) navBackdrop.classList.add('is-open');
+    document.body.classList.add('nav-lock');
+  }
+  if (navToggle) {
+    navToggle.addEventListener('click', function(){
+      if (siteNav && siteNav.classList.contains('is-open')) closeNav(); else openNav();
+    });
+  }
+  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+  if (siteNav) siteNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
 </script>
 </body>
 </html>
