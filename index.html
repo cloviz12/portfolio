@@ -26,7 +26,12 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="#top">Luis Bravo</a>
-    <nav class="nav">
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav" id="site-nav">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#craft" data-i18n="nav.craft">Craft</a>
       <a href="#about" data-i18n="nav.about">About</a>
@@ -39,6 +44,7 @@
         <span class="lang-opt" data-theme-opt="light">☀</span><span class="lang-sep">/</span><span class="lang-opt" data-theme-opt="dark">☾</span>
       </button>
     </nav>
+    <div class="nav-backdrop" id="nav-backdrop"></div>
   </div>
 </header>
 
@@ -470,6 +476,32 @@
   }
 
   setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+  // --- mobile nav ---
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+  var navBackdrop = document.getElementById('nav-backdrop');
+
+  function closeNav(){
+    if (siteNav) siteNav.classList.remove('is-open');
+    if (navToggle) { navToggle.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', 'false'); }
+    if (navBackdrop) navBackdrop.classList.remove('is-open');
+    document.body.classList.remove('nav-lock');
+  }
+  function openNav(){
+    if (siteNav) siteNav.classList.add('is-open');
+    if (navToggle) { navToggle.classList.add('is-open'); navToggle.setAttribute('aria-expanded', 'true'); }
+    if (navBackdrop) navBackdrop.classList.add('is-open');
+    document.body.classList.add('nav-lock');
+  }
+  if (navToggle) {
+    navToggle.addEventListener('click', function(){
+      if (siteNav && siteNav.classList.contains('is-open')) closeNav(); else openNav();
+    });
+  }
+  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+  if (siteNav) siteNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
 </script>
 </body>
 </html>
