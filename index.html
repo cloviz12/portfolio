@@ -83,9 +83,10 @@
           <h2 class="panel-title" data-i18n="exp.title">Experience</h2>
 
           <article class="job">
-            <div class="job-head">
+            <div class="job-head" role="button" tabindex="0" aria-expanded="true">
               <h3 data-i18n="exp.job1.title">AI Production &amp; Creative Development Lead</h3>
               <span class="job-org">Metaskins Studios</span>
+              <span class="job-chevron" aria-hidden="true">▾</span>
             </div>
             <ul class="job-bullets">
               <li data-i18n="exp.job1.b1">Led the studio's transition to AI-integrated workflows for image and video production.</li>
@@ -95,10 +96,11 @@
             </ul>
           </article>
 
-          <article class="job">
-            <div class="job-head">
+          <article class="job is-collapsed">
+            <div class="job-head" role="button" tabindex="0" aria-expanded="false">
               <h3 data-i18n="exp.job2.title">Camera Operator / Director of Photography / Livestream / Lighting</h3>
               <span class="job-org" data-i18n="exp.job2.org">Independent Audiovisual Productions</span>
+              <span class="job-chevron" aria-hidden="true">▾</span>
             </div>
             <ul class="job-bullets">
               <li data-i18n="exp.job2.b1">Operated camera and directed photography and lighting for large-scale audiovisual productions.</li>
@@ -107,10 +109,11 @@
             </ul>
           </article>
 
-          <article class="job">
-            <div class="job-head">
+          <article class="job is-collapsed">
+            <div class="job-head" role="button" tabindex="0" aria-expanded="false">
               <h3 data-i18n="exp.job3.title">Video Editing &amp; Multimedia Production Lead</h3>
               <span class="job-org">Metaskins Studios</span>
+              <span class="job-chevron" aria-hidden="true">▾</span>
             </div>
             <ul class="job-bullets">
               <li data-i18n="exp.job3.b1">Led editing, post-production, and motion graphics for advertising campaigns for recognized brands.</li>
@@ -405,6 +408,22 @@
     compareRange.addEventListener('input', updateCompare);
     updateCompare();
   }
+
+  // --- experience accordion ---
+  function toggleJob(job){
+    var head = job.querySelector('.job-head');
+    var collapsed = job.classList.toggle('is-collapsed');
+    head.setAttribute('aria-expanded', String(!collapsed));
+  }
+  document.querySelectorAll('.job-head').forEach(function(head){
+    head.addEventListener('click', function(){ toggleJob(head.closest('.job')); });
+    head.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleJob(head.closest('.job'));
+      }
+    });
+  });
 
   document.querySelectorAll('.filter-pill').forEach(function(pill){
     pill.addEventListener('click', function(){

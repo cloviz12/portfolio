@@ -334,11 +334,21 @@ a{color:var(--teal);}
 
 .job{margin-bottom:2rem;}
 .job:last-child{margin-bottom:0;}
-.job-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:0.5rem; margin-bottom:0.5rem;}
+.job-head{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:0.5rem; margin-bottom:0.5rem;
+  cursor:pointer; user-select:none;
+}
 .job-head h3{font-family:'General Sans', sans-serif; font-size:1.15rem; margin:0;}
 .job-org{color:var(--ink-soft); font-size:0.9rem;}
+.job-chevron{
+  margin-left:auto; color:var(--teal); font-size:0.8rem;
+  transition:transform 0.2s ease;
+}
+.job.is-collapsed .job-chevron{transform:rotate(-90deg);}
 .job-bullets{margin:0; padding-left:1.1rem; color:var(--ink-soft); font-size:0.92rem;}
 .job-bullets li{margin-bottom:0.35rem;}
+.job.is-collapsed .job-bullets{display:none;}
+.job.is-collapsed .job-head{margin-bottom:0;}
 
 .profile-section{padding-top:1rem; padding-bottom:5rem;}
 .profile-grid{
