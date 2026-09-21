@@ -64,7 +64,7 @@
       <p class="hero-lede" data-i18n="hero.lede">Senior video editor and audiovisual producer based in Colombia, open to remote international work. I've led brand campaigns end-to-end — production, post, motion graphics — and built the AI-assisted workflows that let a small creative team ship faster.</p>
       <div class="hero-actions">
         <a class="btn btn-primary magnetic" href="mailto:saintclovis101@gmail.com" data-i18n="hero.contactBtn">Get in touch</a>
-        <a class="btn btn-ghost magnetic" href="assets/Luis_Bravo_CV_EN.docx" download data-i18n="hero.downloadBtn">Download résumé</a>
+        <a class="btn btn-ghost magnetic" id="resume-link" href="assets/Luis_Bravo_CV_EN.docx" download="Luis_Bravo_CV_EN.docx" data-i18n="hero.downloadBtn">Download résumé</a>
       </div>
     </div>
   </section>
@@ -551,6 +551,8 @@
 
   var originals = {};
   var langToggle = document.getElementById('lang-toggle');
+  var resumeLink = document.getElementById('resume-link');
+  var RESUME_FILE = { en: 'Luis_Bravo_CV_EN.docx', es: 'Luis_Bravo_CV_ES.docx' };
 
   function setLang(lang){
     document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -563,6 +565,11 @@
     if (langToggle) langToggle.querySelectorAll('.lang-opt').forEach(function(el){
       el.classList.toggle('active', el.dataset.lang === lang);
     });
+    if (resumeLink) {
+      var file = RESUME_FILE[lang] || RESUME_FILE.en;
+      resumeLink.setAttribute('href', 'assets/' + file);
+      resumeLink.setAttribute('download', file);
+    }
     if (compareRange && gradeReadout) updateCompare();
     try { localStorage.setItem('lb-lang', lang); } catch(e){}
   }
